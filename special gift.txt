@@ -1,0 +1,57 @@
+Special Gift
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define f(i, a, b, c) for (ll i = a; i < b; i += c)
+#define b(i, a, b, c) for (ll i = a; i >= b; i -= c)
+#define io ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
+#define mod 10000007;
+#define out(a, n) f(i,0,n,1 cout<<a[i];
+#define vec(a, n) vector<int> a[n];
+#define sort1(a, n) sort(a, a + n)
+#define ff first
+#define ss second
+#define mp make_pair
+#define pb push_back
+#define print(a)          \
+    for (auto i : a)      \
+    {                     \
+        cout << i << " "; \
+    }
+#define print1(a)                           \
+    for (auto i : a)                        \
+    {                                       \
+        cout << i.ff << " " << i.ss << endl \
+    }
+
+void diwaliGift(ll prices[], ll n, ll k)
+{
+    ll buy = INT_MAX;
+    ll sell = 0;
+    f(i, 0, n, 1)
+    {
+        buy = min(buy, prices[i]);
+        sell = max(sell, prices[i] - buy);
+    }
+    if (sell >= k)
+        cout << "YES";
+    else
+        cout << "NO";
+}
+
+int main()
+{
+    io;
+    ll n;
+    cin >> n;
+    ll a[n];
+    f(i, 0, n, 1)
+    {
+        cin >> a[i];
+    }
+    ll k;
+    cin >> k;
+    diwaliGift(a, n, k);
+    return 0;
+}

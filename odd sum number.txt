@@ -1,0 +1,21 @@
+Odd Sum Number
+You are given an array A of length of N. You have to print the sum of all the N numbers in an array.
+
+Approach: We have to find sum of all the numbers where number is odd.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin>>n;
+    int arr[n];
+    int sum=0;
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+        if(arr[i]%2==1)
+            sum+=arr[i];
+    }
+    cout<<sum<<endl;
+    return 0;
+}

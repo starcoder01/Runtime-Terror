@@ -1,0 +1,27 @@
+def solve():
+    n,k=map(int,input().split())
+    ls=list(map(int,input().split()))
+    ind=-1;
+    ls.sort();
+    for i in range(n):
+        if ls[i]%2==0:
+            ind=i;
+            break;
+    if(ind==-1 or ls[ind]>k):
+        print(0);
+        return;
+    k=k-ls[ind];
+    c=1;
+    i=0;
+    while(k>0 and i<n):
+        if(ind==i):
+            i+=1;
+            continue;
+        if(k-ls[i]>=0):
+            c+=1;
+            k-=ls[i];
+            i+=1;
+        else:
+            break;
+    print(c)
+solve()
